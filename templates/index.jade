@@ -1,0 +1,42 @@
+html(lang='en')
+head
+    meta(charset='utf-8')
+    //
+       Always force latest IE rendering engine (even in intranet) & Chrome Frame
+              Remove this if you use the .htaccess
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Built
+    meta(name='description', content='')
+    meta(name='author', content='Johannes Stein')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //
+       Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='apple-touch-icon', href='/apple-touch-icon.png')
+    script(src='lib/jquery.js')
+    script(src='lib/ace.js')
+    link(rel='stylesheet', type='text/css', href='style/normalize.css')
+    link(rel='stylesheet', type='text/css', href='style/main.css')
+    body
+        #container
+            #button-bar
+                span#btn-reset.button Reset
+                span#btn-save.button.disabled Save
+                span#btn-deploy.button.disabled Deploy
+                span#btn-share.button.disabled Share
+            #editor-container
+                #editor-variables
+                    span.code-line var canvas = document.getElementById("canvas");
+                    span.code-line var ctx = canvas.getContext("2d");
+                #editor
+                #editor-message
+            #canvas-container
+                //
+                  <div id="canvas-options">
+                                      <span>Canvas size: Width:</span>
+                                      <input id="edt-canvas-width" type="text" value="400" />
+                                      <span> Height: </span>
+                                      <input id="edt-canvas-height" type="text" value="300" />
+                                  </div>
+                canvas#canvas(width='400', height='300')
+        script(src='app.js')
