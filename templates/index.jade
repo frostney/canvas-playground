@@ -31,12 +31,12 @@ head
                 #editor
                 #editor-message
             #canvas-container
-                //
-                  <div id="canvas-options">
-                                      <span>Canvas size: Width:</span>
-                                      <input id="edt-canvas-width" type="text" value="400" />
-                                      <span> Height: </span>
-                                      <input id="edt-canvas-height" type="text" value="300" />
-                                  </div>
+                .canvas-options
+                    div Canvas size:
+                    span Width
+                    input#edt-canvas-width(type="number", value="400")
+                    span px   Height
+                    input#edt-canvas-width(type="number", value="300")
+                    span px
                 canvas#canvas(width='400', height='300')
         script(src='app.js')
