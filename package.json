@@ -29,7 +29,7 @@
     "metalsmith-collections": "^0.4.1",
     "metalsmith-json": "^0.1.2",
     "metalsmith-markdown": "^0.2.1",
-    "metalsmith-stylus": "Waxolunist/metalsmith-stylus#add-nib",
+    "metalsmith-stylus": "~0.2.1",
     "metalsmith-templates": "^0.5.2"
   },
   "dependencies": {
