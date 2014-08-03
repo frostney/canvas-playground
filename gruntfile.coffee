@@ -2,6 +2,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-metalsmith'
   grunt.loadNpmTasks 'grunt-bowercopy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-image-resize'
   grunt.loadNpmTasks 'grunt-gh-pages'
 
@@ -10,6 +11,14 @@ module.exports = (grunt) ->
       options:
         base: 'build'
       src: ['**']
+    uglify:
+      all:
+        files: [
+          expand: true
+          cwd: 'build'
+          src: '**/*.js'
+          dest: 'build'
+        ]
     metalsmith:
       staticSite:
         options:
@@ -37,6 +46,10 @@ module.exports = (grunt) ->
           'build/lib/mode-javascript.js': 'ace-builds/src/mode-javascript.js'
           'build/lib/theme-github.js': 'ace-builds/src/theme-github.js'
           'build/lib/worker-javascript.js': 'ace-builds/src/worker-javascript.js'
+          'build/lib/jszip.js': 'jszip/dist/jszip.js'
 
-  grunt.registerTask 'default', ['metalsmith', 'bowercopy']
-  grunt.registerTask 'deploy', ['default', 'gh-pages']
+  grunt.registerTask 'build:dev', ['metalsmith', 'bowercopy']
+  grunt.registerTask 'build:dist', ['build:dev', 'uglify']
+
+  grunt.registerTask 'default', ['build:dev']
+  grunt.registerTask 'deploy', ['build:dest', 'gh-pages']
