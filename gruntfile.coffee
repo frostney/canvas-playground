@@ -47,6 +47,7 @@ module.exports = (grunt) ->
           'build/lib/theme-github.js': 'ace-builds/src/theme-github.js'
           'build/lib/worker-javascript.js': 'ace-builds/src/worker-javascript.js'
           'build/lib/jszip.js': 'jszip/dist/jszip.js'
+          'build/lib/filesaver.js': 'FileSaver/FileSaver.js'
 
   grunt.registerTask 'build:dev', ['metalsmith', 'bowercopy']
   grunt.registerTask 'build:dist', ['build:dev', 'uglify']
