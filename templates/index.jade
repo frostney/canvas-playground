@@ -13,6 +13,7 @@ head
        Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
     link(rel='shortcut icon', href='/favicon.ico')
     link(rel='apple-touch-icon', href='/apple-touch-icon.png')
+    script(src='lib/filesaver.js')
     script(src='lib/jquery.js')
     script(src='lib/ace.js')
     script(src='lib/jszip.js')
@@ -24,6 +25,7 @@ head
                 span#btn-reset.button Reset
                 span#btn-download.button Download
                 span#btn-share.button Share
+                span#btn-github.button Fork on Github
             #editor-container
                 #editor-variables
                     span.code-line var canvas = document.getElementById("canvas");
